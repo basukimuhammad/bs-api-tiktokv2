@@ -12,7 +12,7 @@ app.register(require("@fastify/static"), {
 
 // Endpoint utama
 app.get("/", async (req, res) => {
-    res.send("Selamat datang di API TikTok Downloader! Gunakan /tiktok?url={link_video}");
+    res.send("Selamat datang di API TikTok Downloader By Basuki! Gunakan /tiktok?url={link_video}");
 });
 
 // Endpoint TikTok downloader
@@ -30,6 +30,7 @@ app.get("/tiktok", async (req, res) => {
         const hasil = await TiktokDownloader(videoUrl); // Panggil fungsi downloader
         res.send({
             status: "success",
+            creator: "Basuki",
             data: hasil,
         });
     } catch (error) {
